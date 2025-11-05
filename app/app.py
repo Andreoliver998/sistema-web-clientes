@@ -64,7 +64,7 @@ css_app()
 st.markdown("""
 <div class='center-box'>
     <div class='title'>📑 Sistema de Controle</div>
-    <div class='subtitle'>Sistema conectado, rápido e profissional</div>
+    <div class='subtitle'>Sistema conectado ao google sheets</div>
 </div>
 """, unsafe_allow_html=True)
 
