@@ -1,0 +1,23 @@
+# Ignorar ambiente virtual
+.venv/
+venv/
+
+# Ignorar cache do Python
+__pycache__/
+*.pyc
+
+# Streamlit configs locais
+.streamlit/secrets.toml
+.streamlit/*.json
+
+# VSCode settings locais
+.vscode/
+
+# Arquivos temporários
+*.log
+*.tmp
+
+# Ambientes e dependências locais
+.env
+*.env
+.DS_Store
