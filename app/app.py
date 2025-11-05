@@ -73,5 +73,5 @@ exibir_logo_painel()
 
 # ✅ Aqui começam as páginas e o dashboard
 # Exemplo de mensagem inicial
-st.write("✅ Sistema carregado com sucesso!")
-st.write("🧠 Painel pronto para receber seus gráficos, tabelas e páginas.")
+#st.write("✅ Sistema carregado com sucesso!")
+#st.write("🧠 Painel pronto para receber seus gráficos, tabelas e páginas.")
