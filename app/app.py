@@ -62,5 +62,5 @@ st.markdown("""
 exibir_logo_painel()
 
 # Aqui você coloca o restante do seu painel
-st.write("✅ Sistema carregado com sucesso!")
-st.write("Agora você pode adicionar tabelas, gráficos e páginas aqui.")
+#st.write("✅ Sistema carregado com sucesso!")
+#st.write("Agora você pode adicionar tabelas, gráficos e páginas aqui.")
