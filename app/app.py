@@ -5,25 +5,6 @@ import base64
 # ========= CONFIG =========
 st.set_page_config(page_title="CRM de Vendas", page_icon="🧾", layout="wide")
 
-# ========= CSS TELA LOGIN =========
-def css_login_mode():
-    st.markdown("""
-    <style>
-    [data-testid="stSidebar"], header, footer { display: none !important; }
-    body { background-color: #0e1117 !important; }
-    .center-login {
-        display:flex; flex-direction:column; justify-content:center; align-items:center;
-        height:10vh; text-align:center;
-    }
-    .login-box {
-        background:#161b22; padding:35px; border-radius:12px; width:350px;
-        border:1px solid #2d323b; box-shadow:0px 0px 12px rgba(0,0,0,0.45);
-    }
-    .login-title { font-size:22px; font-weight:700; color:white; margin-bottom:5px; }
-    .login-sub { font-size:14px; color:#9fa4ad; margin-bottom:20px; }
-    </style>
-    """, unsafe_allow_html=True)
-
 # ========= CSS PAINEL =========
 def css_app():
     st.markdown("""
@@ -42,20 +23,13 @@ def css_app():
     </style>
     """, unsafe_allow_html=True)
 
-# ========= LOGO LOGIN =========
-def exibir_logo(path="assets/logo.png", width=200):
-    try:
-        with open(path, "rb") as img:
-            base = base64.b64encode(img.read()).decode()
-        st.markdown(f"<img src='data:image/png;base64,{base}' width='{width}px' style='margin-bottom:20px;'>",
-                    unsafe_allow_html=True)
-    except:
-        st.warning("assets/logo.png")
-
 # ========= LOGO PAINEL =========
 def exibir_logo_painel():
-    try:
-        with open("assets/logo_dashboard.png", "rb") as img:
+    # Caminho automático da logo (funciona no PC e no Streamlit Cloud)
+    logo_path = Path(__file__).resolve().parent / "assets" / "logo_dashboard.png"
+
+    if logo_path.exists():
+        with open(logo_path, "rb") as img:
             base = base64.b64encode(img.read()).decode()
         st.markdown(
             f"""
@@ -64,50 +38,18 @@ def exibir_logo_painel():
                 <div class='logo-text'>ga-suautoestima.com.br</div>
                 <div class='slogan'>Bem-vindo ao seu painel de gestão</div>
             </div>
-            """, unsafe_allow_html=True
+            """,
+            unsafe_allow_html=True
         )
-    except:
-        st.warning("📎 Adicione: assets/logo_dashboard.png")
+    else:
+        st.warning(f"❗ Logo não encontrada no caminho: {logo_path}")
 
-# ========= LOGIN =========
-def tela_login():
-    css_login_mode()
-    st.markdown('<div class="center-login">', unsafe_allow_html=True)
-
-   # exibir_logo(220)
-    st.markdown("""
-        <div class='login-box'>
-            <div class='login-title'>Acesso ao Sistema</div>
-            <div class='login-sub'>Digite suas credenciais</div>
-    """, unsafe_allow_html=True)
-
-    user = st.text_input("Usuário")
-    pwd = st.text_input("Senha", type="password")
-
-    if st.button("Entrar"):
-        if user == st.secrets["auth"]["username"] and pwd == st.secrets["auth"]["password"]:
-            st.session_state.logged = True
-            st.rerun()
-        else:
-            st.error("❌ Usuário ou senha inválidos")
-
-    st.markdown("</div></div>", unsafe_allow_html=True)
-
-# ========= CONTROLE DE SESSÃO =========
-if "logged" not in st.session_state:
-    st.session_state.logged = False
-
-if not st.session_state.logged:
-    tela_login()
-    st.stop()
+# ========= LOGIN DESATIVADO =========
+# Sistema entra direto
+st.session_state.logged = True
 
 # ========= PAINEL LIBERADO =========
 css_app()
-
-#st.sidebar.success("✅ Login confirmado — acesso liberado")
-if st.sidebar.button("Sair"):
-    st.session_state.logged = False
-    st.rerun()
 
 # ========= HEADER DO PAINEL =========
 st.markdown("""
@@ -118,3 +60,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 exibir_logo_painel()
+
+# Aqui você coloca o restante do seu painel
+st.write("✅ Sistema carregado com sucesso!")
+st.write("Agora você pode adicionar tabelas, gráficos e páginas aqui.")
