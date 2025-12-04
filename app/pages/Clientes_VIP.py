@@ -2,7 +2,11 @@ import streamlit as st
 import pandas as pd
 from lib.sheets import read_df
 import gspread
-
+st.set_page_config(
+    page_title="Clientes VIP",
+    page_icon="👑",
+    layout="wide"
+)
 st.title("💎 Clientes VIP — Ranking & Ticket Médio")
 
 df = read_df()

@@ -4,7 +4,11 @@ from lib.sheets import read_df
 from io import BytesIO
 
 # ================= CONFIG =================
-st.set_page_config(page_title="CRM - Clientes", layout="wide")
+st.set_page_config(
+    page_title="CRM - Clientes",
+      layout="wide",
+      page_icon="👥"
+)
 
 if "cliente_sel" not in st.session_state:
     st.session_state.cliente_sel = None

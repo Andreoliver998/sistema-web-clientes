@@ -5,6 +5,15 @@ import pandas as pd
 from lib.sheets import read_df, append_row, generate_monthly_key
 from lib.utils import buscar_cep, format_phone_br, parse_brl, to_date_str
 import gspread
+# ================= CONFIG =================
+st.set_page_config(
+    page_title=" CRM - Cadastrar Venda",
+      layout="wide",
+      page_icon="🗃"
+      
+)
+
+
 st.title("➕ Cadastrar Nova Venda")
 
 STATUS_OPTS = ["Pago","Pendente","Cancelado","Aguardando Pagamento","Pagamento aprovado"]

@@ -4,7 +4,11 @@ import plotly.express as px
 from lib.sheets import read_df
 from lib.utils import parse_brl, format_brl
 import gspread
-
+st.set_page_config(
+    page_title="Dashboard",
+    page_icon="📊",
+    layout="wide"
+)
 # ==== GLOBAL STYLE ====
 def css():
     st.markdown("""
