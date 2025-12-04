@@ -54,7 +54,7 @@ with st.form("cadastro"):
     valor_pago = colv2.text_input("Valor Pago (ex.: 0,00)")
 
     coldt1, coldt2 = st.columns(2)
-    data_venda = coldt1.date_input("Data Venda", value=pd.Timestamp.now(tz="DD/MM/YYYY").date())
+    data_venda = coldt1.date_input("Data Venda", value=pd.Timestamp.now(tz="America/Sao_Paulo").date())
     data_pag = coldt2.date_input("Data Pagamento", value=None, disabled=(status!="Pago"))
 
     colf1, colf2 = st.columns(2)
