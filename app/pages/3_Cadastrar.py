@@ -11,7 +11,7 @@ STATUS_OPTS = ["Pago","Pendente","Cancelado","Aguardando Pagamento","Chargeback"
 
 with st.form("cadastro"):
     colp1, colp2, colp3, colp4 = st.columns(4)
-    chave = colp1.text_input("Chave (deixe vazio para gerar automaticamente)")
+    chave = colp1.text_input("Chave")
     produtor = colp2.text_input("Produtor")
     produto = colp3.text_input("Produto")
     plano = colp4. text_input("Plano")
