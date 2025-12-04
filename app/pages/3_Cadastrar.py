@@ -9,7 +9,7 @@ import gspread
 st.set_page_config(
     page_title=" CRM - Cadastrar Venda",
       layout="wide",
-      page_icon="🗃"
+      page_icon="🗂"
       
 )
 
