@@ -7,7 +7,7 @@ from lib.utils import buscar_cep, format_phone_br, parse_brl, to_date_str
 import gspread
 st.title("➕ Cadastrar Nova Venda")
 
-STATUS_OPTS = ["Pago","Pendente","Cancelado","Aguardando Pagamento","Chargeback"]
+STATUS_OPTS = ["Pago","Pendente","Cancelado","Aguardando Pagamento","Pagamento aprovado"]
 
 with st.form("cadastro"):
     colp1, colp2, colp3, colp4 = st.columns(4)
