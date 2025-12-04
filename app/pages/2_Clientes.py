@@ -121,6 +121,7 @@ info = {
     "Data Pagamento": cliente["Data Pagamento"],
     "Frete": cliente["Tipo do Frete"],
     "Rastreio": cliente["Código de Rastreio"]
+    
 }
 
 i = 0
@@ -135,6 +136,7 @@ with st.expander("📍 Endereço"):
     st.write(f"**Complemento:** {cliente['Complemento']}")
     st.write(f"**Bairro:** {cliente['Bairro']}")
     st.write(f"**Cidade:** {cliente['Cidade']} - {cliente['Estado']}")
+
 
 # WhatsApp Button
 phone = cliente["Telefone_Limp"]

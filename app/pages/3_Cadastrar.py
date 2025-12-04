@@ -1,4 +1,5 @@
 \
+from narwhals import col
 import streamlit as st
 import pandas as pd
 from lib.sheets import read_df, append_row, generate_monthly_key
@@ -9,10 +10,11 @@ st.title("➕ Cadastrar Nova Venda")
 STATUS_OPTS = ["Pago","Pendente","Cancelado","Aguardando Pagamento","Chargeback"]
 
 with st.form("cadastro"):
-    colp1, colp2, colp3 = st.columns(3)
-    produtor = colp1.text_input("Produtor")
-    produto = colp2.text_input("Produto")
-    plano = colp3.text_input("Plano")
+    colp1, colp2, colp3, colp4 = st.columns(4)
+    chave = colp1.text_input("Chave (deixe vazio para gerar automaticamente)")
+    produtor = colp2.text_input("Produtor")
+    produto = colp3.text_input("Produto")
+    plano = colp4. text_input("Plano")
 
     comprador = st.text_input("Comprador")
     email = st.text_input("E-mail")
